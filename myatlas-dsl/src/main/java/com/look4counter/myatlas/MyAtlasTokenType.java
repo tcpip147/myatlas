@@ -1,0 +1,5 @@
+package com.look4counter.myatlas;
+
+public enum MyAtlasTokenType {
+	IDENTIFIER, KEYWORD, MULTI_LINE_COMMENT, DOUBLE_QUOTE, SINGLE_QUOTE, DYNAMIC_SQL, EOF, SPACE, UNKNOWN, PARAMETER
+}

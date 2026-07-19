@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+    <extension point="org.eclipse.core.contenttype.contentTypes">
+        <content-type
+            id="com.look4counter.myatlas"
+            name="MyBatis XML"
+            base-type="org.eclipse.core.runtime.xml"
+            file-extensions="xml"
+            priority="normal">
+            <describer class="com.look4counter.myatlas.MyBatisXmlDescriber"/>
+        </content-type>
+    </extension>
+    <extension point="org.eclipse.ui.editors">
+        <editor
+            id="com.look4counter.myatlas.MyBatisEditorPart"
+            name="MyBatis Editor"
+            icon="icons/file.ico"
+            contributorClass="com.look4counter.myatlas.MyBatisEditorPartContributor"
+            class="com.look4counter.myatlas.MyBatisEditorPart">
+            <contentTypeBinding
+                contentTypeId="com.look4counter.myatlas">
+            </contentTypeBinding>
+        </editor>
+    </extension>
+    <extension point="org.eclipse.lsp4e.languageServer">
+        <server
+            class="com.look4counter.myatlas.lsp.MyBatisXmlServerProvider"
+            id="com.look4counter.myatlas.lsp"
+            label="MyBatis XML Language Server">
+        </server>
+        <contentTypeMapping
+            contentType="com.look4counter.myatlas"
+            id="com.look4counter.myatlas.lsp">
+        </contentTypeMapping>
+    </extension>
+</plugin>
