@@ -25,4 +25,3 @@ Automatic-Module-Name: myatlas.eclipse
 Bundle-ClassPath: .,
  lib/myatlas-dsl.jar
 Bundle-RequiredExecutionEnvironment: JavaSE-25
-Import-Package: org.eclipse.ui.views.contentoutline

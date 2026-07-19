@@ -3,6 +3,7 @@ package com.look4counter.myatlas.editor;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.contentassist.ContentAssistant;
 import org.eclipse.jface.text.contentassist.IContentAssistant;
+import org.eclipse.jface.text.reconciler.IReconciler;
 import org.eclipse.jface.text.source.IAnnotationHover;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.ui.editors.text.TextSourceViewerConfiguration;
@@ -21,14 +22,20 @@ public class MyBatisXmlConfiguration extends TextSourceViewerConfiguration {
 		assistant.enableAutoActivation(true);
 		assistant.setAutoActivationDelay(500);
 		assistant.setProposalPopupOrientation(IContentAssistant.PROPOSAL_OVERLAY);
-
 		return assistant;
 	}
 
 	@Override
 	public IAnnotationHover getAnnotationHover(ISourceViewer sourceViewer) {
 		IAnnotationHover annotation = super.getAnnotationHover(sourceViewer);
-		System.out.println(annotation);
 		return annotation;
+	}
+
+	@Override
+	public IReconciler getReconciler(ISourceViewer sourceViewer) {
+		IReconciler reconciler = super.getReconciler(sourceViewer);
+		System.out.println("ABB");
+		System.out.println(reconciler);
+		return reconciler;
 	}
 }
